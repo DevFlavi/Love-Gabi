@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorpresa 21 de Septiembre</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome para los iconos (flecha y sobre) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<!-- SECCIÓN 1 -->
+    <div id="seccion1" class="seccion activa flex-column justify-content-center align-items-center text-center">
+        <h2 class="titulo-sorpresa">Tengo una sorpresa para ti...</h2>
+        <i class="fa-solid fa-chevron-down flecha-animada"></i>
+        <button id="btnDescubrir" class="btn btn-dorado">D E S C U B R I R</button>
+        <div class="mt-4 text-warning fs-1">
+            <i class="fa-solid fa-gift"></i>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 2: RAMO ENVUELTO EN CSS -->
+    <div id="seccion2" class="seccion flex-column justify-content-center align-items-center">
+        <div class="ramo-container">
+            
+            <!-- Flores (Saliendo del cono) -->
+            <!-- Tulipán Izquierdo -->
+            <div class="flor-wrapper anim1" style="left: 60px; height: 260px; transform: rotate(-25deg);">
+                <div class="tallo" style="height: 260px;"></div>
+                <div class="tulipan" style="top: 0;"></div>
+            </div>
+
+            <!-- Tulipán Derecho -->
+            <div class="flor-wrapper anim2" style="right: 60px; height: 240px; transform: rotate(25deg);">
+                <div class="tallo" style="height: 240px;"></div>
+                <div class="tulipan" style="top: 0;"></div>
+            </div>
+
+            <!-- Tulipán Central Alto -->
+            <div class="flor-wrapper anim1" style="left: 175px; height: 300px;">
+                <div class="tallo" style="height: 300px;"></div>
+                <div class="tulipan" style="top: 0;"></div>
+            </div>
+
+            <!-- Girasol Centro-Izquierda -->
+            <div class="flor-wrapper anim2" style="left: 100px; height: 200px; transform: rotate(-10deg);">
+                <div class="tallo" style="height: 200px;"></div>
+                <div class="girasol" style="top: -20px;" id="girasol1">
+                    <div class="girasol-centro"></div>
+                </div>
+            </div>
+
+            <!-- Girasol Centro-Derecha -->
+            <div class="flor-wrapper anim1" style="right: 100px; height: 180px; transform: rotate(15deg);">
+                <div class="tallo" style="height: 180px;"></div>
+                <div class="girasol" style="top: -20px;" id="girasol2">
+                    <div class="girasol-centro"></div>
+                </div>
+            </div>
+
+            <!-- Papel delantero (Cono) y Moño -->
+            <div class="papel-frente"></div>
+            
+            <div class="mono-ramo">
+                <div class="lazo-izq"></div>
+                <div class="lazo-der"></div>
+                <div class="centro-mono"></div>
+                <div class="cola-izq"></div>
+                <div class="cola-der"></div>
+            </div>
+
+            <!-- Sobre interactivo debajo del ramo -->
+            <div id="btnSobre" class="sobre-interactivo">
+                <i class="fa-regular fa-envelope"></i>
+                <p class="mt-1 mb-0 fw-bold" style="color: #555; font-size: 0.8rem;">Abrir Carta</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 3: CARTA -->
+    <div id="seccion3" class="seccion flex-column justify-content-center align-items-center">
+        <div class="carta-papel">
+            <!-- Botón para volver al ramo -->
+            <button id="btnVolver" class="btn-volver" title="Volver al ramo">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div class="fecha">21-09-2026</div>
+            <div class="saludo">Mi amor,</div>
+            
+            <div class="texto-carta">
+                <p>Cada día que pasa me siento increíblemente afortunado de tenerte a mi lado y de compartir la vida contigo. Tu sonrisa 
+                    ilumina cada uno de mis momentos y tu ternura le da sentido a todo. Eres lo más bonito que me 
+                    ha pasado y mi refugio favorito en este mundo. Gracias por tanto amor que me das, te amo con 
+                    todo mi corazón.</p>
+            </div>
+            
+            <div class="text-center mt-4 text-warning fs-3">
+                <i class="fa-solid fa-sun"></i> <i class="fa-solid fa-heart text-danger"></i>
+            </div>
+
+            <div class="despedida">
+                Con amor,<br>
+                Te amo nena <br>
+                
+                G 💞 E
+            </div>
+        </div>
+    </div>x
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

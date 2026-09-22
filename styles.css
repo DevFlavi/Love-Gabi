@@ -1,0 +1,321 @@
+body {
+            background-color: #fdf8f2; 
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .seccion {
+            min-height: 100vh;
+            display: none; 
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .seccion.activa {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* --- SECCIÓN 1: PRESENTACIÓN --- */
+        .titulo-sorpresa {
+            color: #d4af37;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .btn-dorado {
+            background-color: #f1c40f;
+            color: white;
+            border: 2px solid #f1c40f;
+            padding: 12px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-dorado:hover {
+            background-color: #d4af37;
+            border-color: #d4af37;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(212, 175, 55, 0.4);
+        }
+
+        .flecha-animada {
+            animation: flotar 2s infinite;
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* --- SECCIÓN 2: RAMO EN CSS ART --- */
+        .ramo-container {
+            position: relative;
+            width: 350px;
+            height: 500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Envoltura del Ramo (Papel Kraft) - Frontal Simple */
+        .papel-frente {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 200px;
+            background-color: #A67B5B; /* Kraft */
+            z-index: 5;
+            /* Forma de cono */
+            clip-path: polygon(0 0, 100% 0, 75% 100%, 25% 100%);
+            box-shadow: inset 0 20px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Moño */
+        .mono-ramo {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 6;
+        }
+
+        .centro-mono {
+            width: 26px;
+            height: 26px;
+            background-color: #5C4033;
+            border-radius: 50%;
+            position: absolute;
+            left: -13px;
+            top: -13px;
+            z-index: 7;
+            box-shadow: inset -3px -3px 5px rgba(0,0,0,0.3);
+        }
+
+        .lazo-izq, .lazo-der {
+            width: 50px;
+            height: 28px;
+            border: 6px solid #5C4033;
+            border-radius: 50px;
+            position: absolute;
+            top: -14px;
+            z-index: 6;
+        }
+        .lazo-izq { left: -60px; transform: rotate(-15deg); }
+        .lazo-der { left: 10px; transform: rotate(15deg); }
+
+        .cola-izq, .cola-der {
+            width: 10px;
+            height: 70px;
+            background-color: #5C4033;
+            position: absolute;
+            top: 5px;
+            border-radius: 5px;
+            z-index: 5;
+        }
+        .cola-izq { left: -15px; transform: rotate(25deg); }
+        .cola-der { left: 5px; transform: rotate(-25deg); }
+
+        /* Animación del viento */
+        @keyframes viento {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(3deg); }
+            100% { transform: rotate(0deg); }
+        }
+        @keyframes viento-inverso {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(-3deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .flor-wrapper {
+            position: absolute;
+            bottom: 150px; /* Base ajustada para el cono */
+            transform-origin: bottom center;
+            z-index: 2;
+        }
+
+        .flor-wrapper.anim1 { animation: viento 4s infinite ease-in-out; }
+        .flor-wrapper.anim2 { animation: viento-inverso 5s infinite ease-in-out; }
+
+        /* Tallos */
+        .tallo {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            background-color: #4CAF50;
+            border-radius: 4px;
+        }
+
+        /* Tulipanes */
+        .tulipan {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 55px;
+            background-color: #FFD54F;
+            border-radius: 40% 40% 15% 15%;
+            box-shadow: inset -5px -5px 10px rgba(200, 150, 0, 0.4);
+        }
+        .tulipan::before, .tulipan::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 30px;
+            height: 50px;
+            border-radius: 40% 40% 15% 15%;
+            background-color: #FFC107;
+        }
+        .tulipan::before {
+            left: -8px;
+            transform: rotate(-15deg);
+            z-index: -1;
+        }
+        .tulipan::after {
+            right: -8px;
+            transform: rotate(15deg);
+            z-index: -1;
+            background-color: #FFCA28;
+        }
+
+        /* Girasoles */
+        .girasol {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+        }
+        .girasol-centro {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-color: #4E342E;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: inset 0 0 10px #3E2723;
+            border: 2px dotted #6D4C41;
+        }
+        .petalo-girasol {
+            position: absolute;
+            top: 0;
+            left: 32px;
+            width: 14px;
+            height: 80px;
+            background-color: #FFC107;
+            border-radius: 50% 50% 20% 20%;
+            transform-origin: 50% 50%;
+            z-index: 1;
+        }
+
+        /* Sobre Interactivo */
+        .sobre-interactivo {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 10px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-align: center;
+            z-index: 10;
+            border: 2px solid #f1c40f;
+        }
+
+        .sobre-interactivo:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 8px 20px rgba(241, 196, 15, 0.4);
+        }
+
+        .sobre-interactivo i {
+            font-size: 1.8rem;
+            color: #d4af37;
+        }
+
+        /* --- SECCIÓN 3: CARTA --- */
+        .carta-papel {
+            background-color: #ffffff;
+            max-width: 500px;
+            width: 90%;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+            position: relative; /* Para el botón de volver */
+        }
+
+        .btn-volver {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: #d4af37;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .btn-volver:hover {
+            color: #a3821a;
+        }
+
+        .fecha {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #777;
+            font-style: italic;
+        }
+
+        .saludo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            margin-top: 20px; /* Espacio para el botón volver */
+        }
+
+        .texto-carta {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+        }
+
+        .despedida {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            text-align: right;
+            margin-top: 30px;
+            color: #333;
+        }
+    
+        /* Ajuste responsivo extra para pantallas muy pequeñas */
+        @media (max-width: 400px) {
+            .ramo-container {
+                transform: scale(0.85);
+                transform-origin: center center;
+            }
+            .saludo {
+                font-size: 2rem;
+            }
+        }
